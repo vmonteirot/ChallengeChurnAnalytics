@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Configuração do Swagger
+// ConfiguraÃ§Ã£o do Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -22,14 +22,11 @@ builder.Services.AddHttpClient<ExternalAuthService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseDeveloperExceptionPage();
 
     // Ativa o Swagger somente em desenvolvimento
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
